@@ -6,6 +6,7 @@
     <title>ejercicio</title>
 </head>
 <body>
+    <h1>cambio por la cara</h1>
     <?php
 
     $tablaMultiplicar=array(1,2,3,4,5);
