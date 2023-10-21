@@ -47,7 +47,67 @@ if ($_POST) {
         die();
     }
 
+    if(isset($_POST["nuevoProyecto"])){
+        $nombre =$_POST["nombre"];
+        $fechaIni =$_POST["fechaini"];
+        $fechaFin =$_POST["fechafin"];
+        $porcentaje =$_POST["porcentaje"];
+        $importancia =$_POST["importancia"];
 
+
+        if (isset($_SESSION['proyectos'])) {
+            $id = 0;
+        } else {
+            //Calculamos el id mayor
+            $ids = array_column($_SESSION['proyectos'], 'id');
+            $id = max($ids) + 1;
+        }
+        array_push($_SESSION['proyectos'],["id" => $id, "nombre" => $nombre, "fechaini" => $fechaIni, "fechafin" => $fechaFin, "porcentaje" => $porcentaje,"importancia" => $importancia]);
+
+        header("Location: proyectos.php");
+        die();
+    }
+
+
+
+
+
+
+    /*
+    
+    if (isset($_POST['accion'])) {
+        if ($_POST["accion"] == "") {
+            if ($_POST) {
+    
+                if (isset($_POST['nuevoProyecto'])) {
+                    $nombre = filtrado($_POST['nombre']);
+                    $fechaInicio = filtrado($_POST['fechaInicio']);
+                    $fechaFinPrevisto = filtrado($_POST['fechaFinPrevista']);
+                    $diasTranscurridos = filtrado($_POST['diasTranscurridos']);
+                    $porcentajeCompletado = filtrado($_POST['porcentajeCompletado']);
+                    $importancia = filtrado($_POST['importancia']);
+    
+                    if (isset($_SESSION['proyectos'])) {
+                        $id = 0;
+                    } else {
+                        //Calculamos el id mayor
+                        $ids = array_column($_SESSION['proyectos'], 'id');
+                        $id = max($ids) + 1;
+                    }
+                    array_push($_SESSION['proyectos'], [
+                        'id' => $id, 'nombre' => $nombre, 'diasTranscurridos' => $diasTranscurridos,
+                        'fechaInicio' => $fechaInicio, 'fechaFinPrevista' => $fechaFinPrevisto, 'porcentajeCompletado' => $porcentajeCompletado, 'importancia' => $importancia
+                    ]);
+    
+                    header("Location: proyectos.php");
+                    die();
+                }
+            }
+        }
+    }
+    
+    
+    */
 
 
     

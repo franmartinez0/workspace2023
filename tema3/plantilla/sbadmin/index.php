@@ -16,7 +16,7 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Proyecto con plantilla</a>
+        <a class="navbar-brand ps-3" href="proyectos.php">Proyecto con plantilla</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -82,8 +82,8 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="nuevoProyecto.php">Añadir un proyecto nuevo</a>
                                 <a class="nav-link" href="controlador.php?accion=borrarTodo">Borrar todos los proyectos</a>
+                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Nuevo Proyecto</button></a>
                             </nav>
                         </div>
 
@@ -110,12 +110,78 @@
                     <h1 class="mt-4">Proyectos</h1>
 
 
+
+
+
+                    
+
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Todos los proyectos
+                            
+                        </div>
+                            <!------------------------------- Modal ----------------------------------------------->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Proyecto</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    
+
+
+                                <form action="controlador.php" method="POST">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Nombre del proyecto</label>
+                                        <input type="text" class="form-control" id="exampleInputNombre" name="nombre" aria-describedby="emailHelp">
+                                        <div id="emailHelp" class="form-text">Asegúrate de no dejar en blanco ninguna casilla.</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Fecha de inicio</label>
+                                        <input type="date" class="form-control" id="exampleInputNombre" name="fechaini" aria-describedby="emailHelp">
+                                    
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Fecha de fin </label>
+                                        <input type="date" class="form-control" id="exampleInputNombre" name="fechafin" aria-describedby="emailHelp">
+                                        
+                                    </div>
+                                    
+                                    <label for="customRange2" class="form-label">Porcentaje de avance</label>
+                                        <input type="range" class="form-range" min="0" max="100" id="customRange2" name="porcentaje">
+                                        <div  class="form-text">Los valores van desde 0 a 100</div>
+
+                                    <label for="customRange2" class="form-label">Nivel de importancia</label>
+                                        <input type="range" class="form-range" min="0" max="5" id="customRange2" name="importancia">
+                                        <div class="form-text">Los valores van desde 0 a 5</div>
+                                    
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" name="nuevoProyecto">Guardar nuevo proyecto</button>
+                                    
+                                        </div>
+                                
+                                </form>
+
+
+
+
+
+
+
+                            </div>
+                            
+                            </div>
+                        </div>
                         </div>
 
+
+
+
+                        
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
                         <script src="js/scripts.js"></script>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -123,6 +189,15 @@
                         <script src="assets/demo/chart-bar-demo.js"></script>
                         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
                         <script src="js/datatables-simple-demo.js"></script>
+
+
+
+
+
+
+
+
+  
 </body>
 
 </html>
