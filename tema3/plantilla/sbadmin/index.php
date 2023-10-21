@@ -26,34 +26,39 @@
             <li class="nav-item dropdown">
 
 
-                <?php
 
-                
-            if (isset($_SESSION['usuario'])) {
-                echo "<a href='controlador.php?accion=cerrarSesion' class='text-primary me-2'>".$_SESSION['usuario']['email']."</a>";
-            } else {
-            
-            ?>
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Área personal<i class="fas fa-user fa-fw"></i></a>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Área personal<i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-                    <li><a class="dropdown-item" href="register.html">Registrarse</a></li>
-                    <li><a class="dropdown-item" href="login.html">Log in</a></li>
+
+                    <?php
+
+
+                    if (isset($_SESSION['usuario'])) {
+                        echo '<li><a class="dropdown-item" href="controlador.php?accion=cerrar">Logout</a></li>';
+                    } else {
+                        echo '<li><a class="dropdown-item" href="registro.php">Registrarse</a></li>';
+                        echo '<li><a class="dropdown-item" href="login.php">Log in</a></li>';
+                        echo "</div>";
+                    }
+                    ?>
+
+
+
+
+
+                    
+                    
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                   
                 </ul>
-            </li>       
-            <?php
-            
-            }
-            ?>              
+            </li>
 
 
 
-            
-                
+
         </ul>
     </nav>
     <div id="layoutSidenav">
@@ -62,7 +67,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Proyectos</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="proyectos.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Ver todos los proyectos
                         </a>
@@ -77,8 +82,8 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Añadir un proyecto nuevo</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Borrar todos los proyectos</a>
+                                <a class="nav-link" href="nuevoProyecto.php">Añadir un proyecto nuevo</a>
+                                <a class="nav-link" href="controlador.php?accion=borrarTodo">Borrar todos los proyectos</a>
                             </nav>
                         </div>
 
@@ -86,9 +91,17 @@
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Start Bootstrap
-                </div>
+                    <?php
+
+
+                    if (isset($_SESSION['usuario'])) {
+                        echo "<class='text-primary me-2'>" . $_SESSION['usuario']['email'] . "</a>";
+                    } else {
+                        echo "<div class='small'>Logged in as:</div>";
+                        echo "sin loguear aun ";
+                        echo "</div>";
+                    }
+                    ?>
             </nav>
         </div>
         <div id="layoutSidenav_content">
@@ -100,60 +113,16 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            DataTable Example
+                            Todos los proyectos
                         </div>
-                        <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
 
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-    <script src="js/datatables-simple-demo.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+                        <script src="js/scripts.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+                        <script src="assets/demo/chart-area-demo.js"></script>
+                        <script src="assets/demo/chart-bar-demo.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+                        <script src="js/datatables-simple-demo.js"></script>
 </body>
 
 </html>
