@@ -40,6 +40,7 @@ function valorCartas($cartas){
 
 
     }
+    return $jugada;
 }
 
     
@@ -112,7 +113,7 @@ if (isset ($_POST['reiniciar'])){
     
   </div>
 </div>
-<table class="table table-striped-columns">
+<table class="table-primary">
   
   <tbody>
     <tr>
@@ -147,13 +148,23 @@ if (isset ($_POST['reiniciar'])){
 <div class="card" style="width: 18rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Número de cartas sacadas: <?php echo $_SESSION['cartasSacadas']?></li>
-    <li class="list-group-item">Puntuación: <?php echo valorCartas($_SESSION['jugada'])?> </li>
+    <li class="list-group-item">Puntuación: <?php echo valorCartas($_SESSION["jugada"])?> </li>
     
   </ul>
 </div>
 
 
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Resultado: <?php isset( $_SESSION['resultado'])?></li>
+    
+    <?php if (valorCartas($_SESSION['jugada']) > 7): ?>
 
+
+        <li class="list-group-item">Resultado: <?php echo isset($_SESSION['resultado']) ? $_SESSION['resultado'] : "" ?></li> 
+    <?php endif; ?>
+  </ul>
+</div>
 
 </body>
 
