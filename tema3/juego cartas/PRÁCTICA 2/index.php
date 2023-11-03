@@ -91,6 +91,11 @@ if (isset ($_POST['reiniciar'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>juego de cartas</title>
 </head>
+
+
+
+
+
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
@@ -167,19 +172,6 @@ if (isset ($_POST['reiniciar'])){
 </div>
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
