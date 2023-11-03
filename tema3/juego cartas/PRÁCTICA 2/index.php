@@ -118,8 +118,16 @@ if (isset ($_POST['reiniciar'])){
     <tr>
       <th scope="row">jugada</th>
       <td>
-            <?php foreach ($_SESSION["cartasSacadas"] as $carta): ?>
-                <div class='carta' style="background-image: url('cartas/<?php echo $carta; ?>.svg');"></div>
+            <?php foreach ($_SESSION["jugada"] as $carta): ?>
+                <td>
+                <div class="card" style="width: 10rem;">
+                <img src="./cartas/<?php echo $carta; ?>.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                </div>
+                </div>
+                </td>
+                
+
             <?php endforeach; ?>
         </td>
     </tr>
