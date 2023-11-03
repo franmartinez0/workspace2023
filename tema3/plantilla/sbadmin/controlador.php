@@ -2,6 +2,7 @@
 
 session_start();
 
+include_once("lib.php");
 
 
 //---------------------------------------------------POST----------------------------------------------------
@@ -36,6 +37,11 @@ if ($_POST) {
         if (strcmp($password, $password2) != 0) {
             //echo "Qué pasa";
             header("Location: registro.php?error=distintaspassword");
+            die();
+        }
+
+        if(!checkEmail(!email)){
+            header("location: registro.php?error=Email en uso");
             die();
         }
 
