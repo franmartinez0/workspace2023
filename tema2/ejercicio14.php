@@ -6,7 +6,10 @@
     <title>Ejercicio 14</title>
 </head>
 <body>
+
+<h2>esto es una prueba nada mas</h2>
     <?php
+
 
     $notas = array(
         array("nombre" => "simo","materia" => "servidor","nota"=>"5"),
