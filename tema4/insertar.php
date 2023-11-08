@@ -1,7 +1,7 @@
 <?php
  $dbh = null;
 
- define('DB_NAME', 'php');
+ define('DB_NAME', 'regalosNavidad');
  define('DB_USER', 'root');
  define('DB_PASSWORD', 'toor');
  define('DB_HOST', 'mariadb'); //La IP del contenedor Mysql, y el puerto interno del contenedor , no tiene nada que ver con el puerto que toma el contenedor para conectarse al exterior
