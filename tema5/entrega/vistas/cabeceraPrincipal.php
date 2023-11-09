@@ -1,28 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeepRacer Resultados Almería</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-</head>
-<body>
-    
-    <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <img class="d-block mx-auto mb-4" src="./vistas/imgs/deepracer.png" alt="" width="50" >
-        </a>
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="index.php?accion=mostrarTodos" class="nav-link px-2 link-secondary">Resultados</a></li>
-            
-            
-        </ul>
-        </header>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid w-40">
+    <a class="navbar-brand" href="#">Regalos de navidad</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
         
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            cuenta de cliente
+          </a>
+          
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            
+            
+            <?php
+                if (isset($_SESSION['usuario'])) {
+                    echo '<li><a class="dropdown-item" href="controlador.php?accion=cerrar">Logout</a></li>';
+                } else {
+                    echo '<li><a class="dropdown-item" href="login.php">Log in</a></li>';
+                    echo "</div>";
+                }
+                ?>
+
+          </ul>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
+  
 
