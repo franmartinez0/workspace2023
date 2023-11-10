@@ -2,6 +2,8 @@
 namespace RegalosNavidad\modelos;
 use \PDO;
 use RegalosNavidad\vistas;
+use RegalosNavidad\controladores;
+use RegalosNavidad\controladores\controladorUsuarios;
 
 class ModeloUsuario{
 
@@ -19,15 +21,16 @@ class ModeloUsuario{
         $consulta->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'RegalosNavidad\modelos\usuario'); //Nombre de la clase
         $consulta->execute();
 
-        $usuario = $consulta->fetch();
-
             $filas = $consulta->rowCount();
 
             //Si no me devuelve ninguna fila el password es incorrecto
             if ($filas == 0) {
-                return 0;
+
+                echo"<script>window.location='index.php?accion=error';</script>";
+
             } else {
                 //Usuario existe y password correcto 
+                
                 $conexionObject->cerrarConexion();
                 return 1;
             }

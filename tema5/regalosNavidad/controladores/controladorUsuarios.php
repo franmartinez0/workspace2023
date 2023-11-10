@@ -1,11 +1,11 @@
 <?php
  namespace RegalosNavidad\controladores;
 
-
- use RegalosNavidad\vistas\VistaLogin;
+use DeepRacer\modelos\ConexionBaseDeDatos;
+use RegalosNavidad\vistas\VistaLogin;
  use RegalosNavidad\vistas\VistaInicio;
- use RegalosNavidad\vistas\VistaResultados;
  use RegalosNavidad\modelos\modeloUsuario;
+use RegalosNavidad\vistas\VistaResultados;
 
  class controladorUsuarios{
 
@@ -25,17 +25,24 @@
 
         VistaLogin::render();
     }
+    
+    public static function mostrarError(){
 
+        VistaLogin::render();
+        echo"<p class='text-danger' mt-3>login incorrecto, por favor vuelva a intentarlo</p>";
+
+    }
 
     public static function iniciarSesion($email,$password){
 
         modeloUsuario::iniciarSesion($email,$password);
 
+      $_SESSION['usuario']=array("email"=>$email,"password"=>$password);
+
+      
+
         
         die();
-        
-
-
     }
 
 

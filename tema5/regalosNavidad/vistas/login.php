@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <div class='container'>
 
-    <form class="form-signin  mt-2 text-center py-3 " action="controladorUsuario.php" method="POST">
+    <form class="form-signin  mt-2 text-center py-3 " action="index.php" method="POST">
       <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Log in </h1>
       <label for="inputEmail" class="sr-only">Email:</label>
@@ -11,7 +11,7 @@
       <label for="inputPassword" class="sr-only">Contraseña</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="password" required="">
       
-      <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" name="formLogin">Entar</button>
+      <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" name="accion" value="recibirFormLogin" >Entar</button>
       
     </form>
   

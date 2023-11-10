@@ -1,12 +1,13 @@
 <?php
 namespace RegalosNavidad;
 
-use RegalosNavidad\controlador\controladorRegalos as ControladorControladorRegalos;
+
 use RegalosNavidad\controladores\controladorRegalos;
 use RegalosNavidad\controladores\controladorUsuarios;
 use RegalosNavidad\controladores\controladorLink;
 
   session_start();
+  //session_destroy();
 
   //Autocargar las clases --------------------------
   spl_autoload_register(function ($class) {
@@ -26,20 +27,24 @@ if (isset($_REQUEST)){
         if(strcmp($_REQUEST['accion'],'mostrarLogin')==0){
             controladorUsuarios::mostrarLogin();
         }
+
+        
+        if (strcmp($_REQUEST['accion'],'recibirFormLogin')==0){
+            $email=$_REQUEST['email'];
+            $password=$_REQUEST['password'];
+
+           controladorUsuarios::iniciarSesion($email,$password);
+        }
+
+        if(strcmp($_REQUEST['accion'],'error')==0){
+            controladorUsuarios::mostrarError();
+        }
     }else {
         //Mostrar inicio
         controladorRegalos::mostrarInicio();
     
         }
     
-
-            /*
-                if (strcmp($_REQUEST['accion'],'mostrarTodos') == 0) {
-                    //$idUsuario = $_REQUEST['id'];
-                    //controladorRegalos::mostrarRegalos($idResultado);
-                }
-
-            */
 
 
 }
