@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Ejemplo mvc en clase</title>
+    <title>Heroes · Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
 
@@ -48,15 +48,15 @@
   <body>
     
     <main>
-    <h1 class="visually-hidden">Resultados DeepRacer</h1>
+    <h1 class="visually-hidden">Regalos de navidad</h1>
 
     <div class="px-4 py-5 my-5 text-center">
         <img class="d-block mx-auto mb-4" src="./vistas/imgs/deepracer.png" alt="" width="100" >
-        <h1 class="display-5 fw-bold">Deep Racer Almería</h1>
+        <h1 class="display-5 fw-bold">     </h1>
         <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Aquí vamos a mostrar nuestros resultados en la liga DeepRacer</p>
+        <p class="lead mb-4">Logeate para saber donde encontrar las mejores web para tus regalos</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-           <a href="index.php?accion=mostrarTodos"><button type="button" class="btn btn-primary btn-lg px-4 gap-3" >Mi liga</button></a> 
+            <a href="index.php?accion=mostrarLogin"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Mi liga</button></a>
         </div>
         </div>
     </div>

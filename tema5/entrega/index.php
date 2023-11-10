@@ -8,6 +8,15 @@
 
     use DeepRacer\controladores\ControladorLogin;
 
+
+    namespace RegalosNavidad;
+
+
+
+
+
+
+
     //Autocargar las clases --------------------------
     spl_autoload_register(function ($class) {
         //echo substr($class, strpos($class,"\\")+1);

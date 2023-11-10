@@ -1,7 +1,0 @@
-<?php
-namespace controladores\ControladorRegalosNavidad;
-
-
-
-
-?>

@@ -1,6 +1,6 @@
 <?php
-namespace RegalosNavidad\modelos;
 
+namespace regalosNavidad\modelos;
 use \PDO;
 use \PDOException;
 
@@ -38,7 +38,3 @@ class ConexionBaseDeDatos {
         $this->conexion = null;
     }
 }
-
-
-
-?>
