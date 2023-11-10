@@ -1,6 +1,6 @@
 <?php
 
-namespace regalosNavidad\modelos;
+namespace RegalosNavidad\modelos;
 use \PDO;
 use \PDOException;
 

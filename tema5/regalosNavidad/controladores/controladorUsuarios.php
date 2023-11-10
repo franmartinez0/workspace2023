@@ -31,9 +31,7 @@
 
         modeloUsuario::iniciarSesion($email,$password);
 
-        $_SESSION['usuario']=array(email=>$email,id=>$id);
-        VistaResultados::Render();
-
+        
         die();
         
 

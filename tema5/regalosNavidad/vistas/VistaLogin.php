@@ -1,7 +1,7 @@
 <?php
 
 
-namespace DeepRacer\vistas;
+namespace RegalosNavidad\vistas;
     
 class VistaLogin  {
 

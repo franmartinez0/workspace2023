@@ -1,6 +1,7 @@
 <?php
 namespace RegalosNavidad\modelos;
 use \PDO;
+use RegalosNavidad\vistas;
 
 class ModeloUsuario{
 
@@ -11,13 +12,16 @@ class ModeloUsuario{
         $conexion = $conexionObject->getConexion();
 
 
-        $consulta= $conexion->$consulta = $conexion->prepare("SELECT * FROM usuarios WHERE email = ? AND password = ?");
+        $consulta= $conexion->prepare("SELECT * FROM usuarios WHERE email = ? AND password = ?");
         $consulta->bindValue(1, $email);
         $consulta->bindValue(2, $password);
 
         $consulta->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'RegalosNavidad\modelos\usuario'); //Nombre de la clase
         $consulta->execute();
-       
+
+    
+        VistaResultados::Render();
+
         $conexionObject->cerrarConexion();
         
     }
