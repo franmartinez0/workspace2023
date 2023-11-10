@@ -10,7 +10,7 @@ class VistaLogin  {
         include("cabeceraPrincipal.php");
 
         include("login.php");
-
+       
     }
 
 }

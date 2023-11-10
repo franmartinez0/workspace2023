@@ -4,10 +4,12 @@ namespace RegalosNavidad;
 
 use RegalosNavidad\controladores\controladorRegalos;
 use RegalosNavidad\controladores\controladorUsuarios;
-use RegalosNavidad\controladores\controladorLink;
+
+
 
   session_start();
-  //session_destroy();
+  
+  
 
   //Autocargar las clases --------------------------
   spl_autoload_register(function ($class) {
@@ -21,9 +23,11 @@ use RegalosNavidad\controladores\controladorLink;
 
 if (isset($_REQUEST)){
 
+    
 
     if(isset($_REQUEST['accion'])){
-
+       //var_dump($_SESSION['id']);
+        
         if(strcmp($_REQUEST['accion'],'mostrarLogin')==0){
             controladorUsuarios::mostrarLogin();
         }
@@ -32,13 +36,29 @@ if (isset($_REQUEST)){
         if (strcmp($_REQUEST['accion'],'recibirFormLogin')==0){
             $email=$_REQUEST['email'];
             $password=$_REQUEST['password'];
-
+            
            controladorUsuarios::iniciarSesion($email,$password);
+          
         }
 
         if(strcmp($_REQUEST['accion'],'error')==0){
             controladorUsuarios::mostrarError();
         }
+
+        if(strcmp($_REQUEST['accion'],'cerrarSesion')==0){
+            controladorUsuarios::mostrarLogin();
+            session_destroy();
+
+        }
+
+        if(strcmp($_REQUEST['accion'],'error')==0){
+            controladorUsuarios::mostrarError();
+        }
+        if(strcmp($_REQUEST['accion'],'mostrarRegalos')==0){
+            controladorRegalos::mostrarRegalos();
+        }
+
+
     }else {
         //Mostrar inicio
         controladorRegalos::mostrarInicio();

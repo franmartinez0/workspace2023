@@ -1,10 +1,10 @@
 <?php
  namespace RegalosNavidad\controladores;
- 
 
- use RegalosNavidad\vistas\VistaInicio;
- use RegalosNavidad\modelos\ModeloRegalo;
 
+use RegalosNavidad\vistas\VistaInicio;
+ use RegalosNavidad\modelos\modeloRegalos;
+use RegalosNavidad\vistas\VistaRegalos;
 
 class controladorRegalos{
 
@@ -12,6 +12,15 @@ class controladorRegalos{
 
         VistaInicio::render();
     }
+
+
+    public static function mostrarRegalos(){
+        //$regalos=modeloRegalos::mostrarRegalos();
+
+        //VistaRegalos::render($regalos);
+    }
+
+
 
 }
 
