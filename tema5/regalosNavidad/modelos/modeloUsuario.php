@@ -19,10 +19,18 @@ class ModeloUsuario{
         $consulta->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'RegalosNavidad\modelos\usuario'); //Nombre de la clase
         $consulta->execute();
 
-    
-        VistaResultados::Render();
+        $usuario = $consulta->fetch();
 
-        $conexionObject->cerrarConexion();
+            $filas = $consulta->rowCount();
+
+            //Si no me devuelve ninguna fila el password es incorrecto
+            if ($filas == 0) {
+                return 0;
+            } else {
+                //Usuario existe y password correcto 
+                $conexionObject->cerrarConexion();
+                return 1;
+            }
         
     }
 

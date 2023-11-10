@@ -1,5 +1,5 @@
 <?php
- namespace RegalosNavidad\vistas;
+ namespace RegalosNavidad\controladores;
 
 
  use RegalosNavidad\vistas\VistaLogin;

@@ -1,13 +1,10 @@
 <?php
 namespace RegalosNavidad;
 
-
+use RegalosNavidad\controlador\controladorRegalos as ControladorControladorRegalos;
 use RegalosNavidad\controladores\controladorRegalos;
 use RegalosNavidad\controladores\controladorUsuarios;
-use RegalosNavidad\controladores\controladorLinks;
-
-
-
+use RegalosNavidad\controladores\controladorLink;
 
   session_start();
 
@@ -23,17 +20,31 @@ use RegalosNavidad\controladores\controladorLinks;
 
 if (isset($_REQUEST)){
 
+
+
+
     if(isset($_REQUEST['accion'])){
 
         if(strcmp($_REQUEST['accion'],'mostrarLogin')==0){
-            controladorUsuarios::mostrarFormularioLogin();
+            controladorUsuarios::mostrarLogin();
         }
     }
 
+            /*
+                if (strcmp($_REQUEST['accion'],'mostrarTodos') == 0) {
+                    //$idUsuario = $_REQUEST['id'];
+                    //controladorRegalos::mostrarRegalos($idResultado);
+                }
+
+            */
 
 
+}else {
+    //Mostrar inicio
+    controladorRegalos::mostrarInicio();
 
-}
+    }
+
 
 
 

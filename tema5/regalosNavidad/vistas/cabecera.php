@@ -51,12 +51,12 @@
     <h1 class="visually-hidden">Regalos de navidad</h1>
 
     <div class="px-4 py-5 my-5 text-center">
-        <img class="d-block mx-auto mb-4" src="./vistas/imgs/deepracer.png" alt="" width="100" >
+        <img class="d-block mx-auto mb-4" src="./vistas/img/1.png" alt="" width="100" >
         <h1 class="display-5 fw-bold">     </h1>
         <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Logeate para saber donde encontrar las mejores web para tus regalos</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="index.php?accion=mostrarLogin"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Mi liga</button></a>
+            <a href="index.php?accion=mostrarLogin"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Log in</button></a>
         </div>
         </div>
     </div>
