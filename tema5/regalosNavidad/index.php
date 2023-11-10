@@ -21,14 +21,17 @@ use RegalosNavidad\controladores\controladorLink;
 if (isset($_REQUEST)){
 
 
-
-
     if(isset($_REQUEST['accion'])){
 
         if(strcmp($_REQUEST['accion'],'mostrarLogin')==0){
             controladorUsuarios::mostrarLogin();
         }
-    }
+    }else {
+        //Mostrar inicio
+        controladorRegalos::mostrarInicio();
+    
+        }
+    
 
             /*
                 if (strcmp($_REQUEST['accion'],'mostrarTodos') == 0) {
@@ -39,12 +42,7 @@ if (isset($_REQUEST)){
             */
 
 
-}else {
-    //Mostrar inicio
-    controladorRegalos::mostrarInicio();
-
-    }
-
+}
 
 
 
