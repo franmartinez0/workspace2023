@@ -37,6 +37,8 @@ class ModeloUsuario{
                
                 $conexionObject->cerrarConexion();
                 return 1;
+                //echo"<script>window.location='index.php?accion=mostrarRegalos';</script>";
+                header("Location: index.php?accion=mostrarRegalos") ;           
             }
         
     }

@@ -1,7 +1,6 @@
 <?php
  namespace RegalosNavidad\controladores;
 
-use DeepRacer\modelos\ConexionBaseDeDatos;
 use RegalosNavidad\vistas\VistaLogin;
  use RegalosNavidad\vistas\VistaInicio;
  use RegalosNavidad\modelos\modeloUsuario;
@@ -35,14 +34,10 @@ use RegalosNavidad\vistas\VistaResultados;
     }
 
     public static function iniciarSesion($email,$password){
-
-        modeloUsuario::iniciarSesion($email,$password);
-
-       
-     
-
-      //metemos aqui la funcion que llama a controlador regalos para pintar todo
         
+        modeloUsuario::iniciarSesion($email,$password);
+        echo"<script>window.location='index.php?accion=mostrarRegalos';</script>";
+         
         
         die();
     }

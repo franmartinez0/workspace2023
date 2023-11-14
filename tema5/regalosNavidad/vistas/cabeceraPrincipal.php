@@ -16,7 +16,7 @@
                             
             
             <?php
-                if (isset($_SESSION['usuario'])) {
+                if (isset($_SESSION['id'])) {
                     echo '<li><a class="dropdown-item" href="index.php?accion=cerrarSesion">Logout</a></li>';
                 } else {
                     echo '<li><a class="dropdown-item" href="index.php">Log in</a></li>';

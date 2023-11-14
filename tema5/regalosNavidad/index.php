@@ -26,7 +26,7 @@ if (isset($_REQUEST)){
     
 
     if(isset($_REQUEST['accion'])){
-       //var_dump($_SESSION['id']);
+       var_dump($_SESSION['id']);
         
         if(strcmp($_REQUEST['accion'],'mostrarLogin')==0){
             controladorUsuarios::mostrarLogin();
@@ -55,7 +55,7 @@ if (isset($_REQUEST)){
             controladorUsuarios::mostrarError();
         }
         if(strcmp($_REQUEST['accion'],'mostrarRegalos')==0){
-            controladorRegalos::mostrarRegalos();
+            controladorRegalos::mostrarRegalos($_SESSION['id']);
         }
 
 

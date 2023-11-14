@@ -14,8 +14,8 @@ class controladorRegalos{
     }
 
 
-    public static function mostrarRegalos(){
-        //$regalos=modeloRegalos::mostrarRegalos();
+    public static function mostrarRegalos($idUsuario){
+        //$regalos=modeloRegalos::mostrarRegalos($idUsuario);
 
         //VistaRegalos::render($regalos);
     }
