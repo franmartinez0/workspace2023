@@ -7,7 +7,7 @@ class VistaLogin  {
 
     public static function render() {
 
-        include("cabeceraPrincipal.php");
+        include_once("cabeceraPrincipal.php");
 
         include("login.php");
        

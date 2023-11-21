@@ -26,9 +26,33 @@ if (isset($_REQUEST)){
     
 
     if(isset($_REQUEST['accion'])){
-       var_dump($_SESSION['id']);
+       //var_dump($_SESSION['id']);
+
+
+          //MOSTRAR TODOS LOS RESULTADOS
+          if (strcmp($_REQUEST['accion'],'mostrarTodos') == 0) {
+            //Comprobar si estamos logueados
+            if (isset($_SESSION['usuario'])) {
+                controladorRegalos::mostrarRegalos();
+            } else {
+                //Pintar login
+                controladorUsuarios::mostrarLogin();
+            }
+        }
+
+        //CERRAR SESIÓN
+        if (strcmp($_REQUEST['accion'],'cerrarSesion') == 0) {
+            session_destroy();
+            header("Location: index.php?accion=mostrarTodos");
+        }
+
+
+
+
+
+
         
-        if(strcmp($_REQUEST['accion'],'mostrarLogin')==0){
+       /* if(strcmp($_REQUEST['accion'],'mostrarLogin')==0){
             controladorUsuarios::mostrarLogin();
         }
 
@@ -48,6 +72,7 @@ if (isset($_REQUEST)){
         if(strcmp($_REQUEST['accion'],'cerrarSesion')==0){
             controladorUsuarios::mostrarLogin();
             session_destroy();
+            header("Location: index.php?accion=mostrarLogin");
 
         }
 
@@ -57,7 +82,7 @@ if (isset($_REQUEST)){
         if(strcmp($_REQUEST['accion'],'mostrarRegalos')==0){
             controladorRegalos::mostrarRegalos($_SESSION['id']);
         }
-
+        */
 
     }else {
         //Mostrar inicio

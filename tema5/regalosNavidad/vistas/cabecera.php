@@ -56,7 +56,7 @@
         <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Logeate para saber donde encontrar las mejores web para tus regalos</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="index.php?accion=mostrarLogin"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Log in</button></a>
+            <a href="index.php?accion=mostrarTodos"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Log in</button></a>
         </div>
         </div>
     </div>

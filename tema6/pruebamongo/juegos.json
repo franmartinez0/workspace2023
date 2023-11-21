@@ -1,0 +1,30 @@
+[
+    {"nombre":"God of War",
+    "plataformas":[
+        "ps5","pc","xbox"
+    ],
+    "precio":50,
+    "nota":9.5,
+    "descripcion":"juego de uno que va dando ostias"
+    },
+    {
+        "nombre":"EAFC23",
+        "plataformas":[
+            "ps5","pc"
+        ],
+        "precio":80,
+        "nota":7,
+        "descripcion":"juego para cabrearse mucho"
+    },
+    {
+        "nombre":"Cod Mpdern Warfare",
+        "plataformas":[
+            "ps5","pc","xbox"
+        ],
+        "precio":24,
+        "nota":10,
+        "descripcion":"juego para pegar tiros"
+    }
+]
+
+
