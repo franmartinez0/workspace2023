@@ -4,14 +4,17 @@ namespace regalos\modelos;
 
 class usuario{
     private $id;
+    private $nombre;
     private $email;
     private $password;
 
-    public function __construct($id="",$email="",$password=""){
+    public function __construct($id="",$nombre="",$email="",$password=""){
         $this->id=$id;
+        $this->nombre=$nombre;
         $this->email=$email;
         $this->password=$password; 
     }
+
 
 
 
@@ -30,6 +33,24 @@ class usuario{
     public function setId($id): self
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nombre
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set the value of nombre
+     */
+    public function setNombre($nombre): self
+    {
+        $this->nombre = $nombre;
 
         return $this;
     }

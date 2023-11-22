@@ -1,5 +1,5 @@
 <?php
-namespace RegalosNavidad\modelos;
+namespace regalos\modelos;
 use \PDO;
 
 class ModeloUsuario{

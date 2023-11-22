@@ -2,7 +2,7 @@
 
 namespace regalos\modelos;
 
-class usuario{
+class regalo{
     private $id;
     private $nombre;
     private $idUsuario;
