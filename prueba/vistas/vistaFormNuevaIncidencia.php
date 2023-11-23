@@ -5,7 +5,7 @@
 
         public static function render() {
 
-            include "cabeceraPrincipal.php";
+            include "cabecera.php";
             
             echo "<div class='container'>";
           
@@ -66,22 +66,11 @@
       </select>
     </div>
 
-    <div class="mb-3 row">
-        <label for="pista" class="col-sm-2 col-form-label">Precio</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" id="precio" name="precio" min="1" max="9999">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="tiempo" class="col-sm-2 col-form-label">año</label>
-        <div class="col-sm-10">
-        <input type="number" class="form-control" id="year" name="year" min="1900" max="2200">
-        </div>
-    </div>
+    
     
    
     <div class="mb-3 row w-25 float-end">
-        <button class='btn btn-success' type="submit" name="accion" value="recibirFormNuevoRegalo">Crear</button>
+        <button class='btn btn-success' type="submit" name="accion" value="recibirFormNuevaIncidencia">Crear</button>
     </div>
   </form>
             

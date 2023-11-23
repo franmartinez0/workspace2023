@@ -72,7 +72,7 @@ if(isset($_REQUEST)){
 
     //RECIBIR FORM NUEVO REGALO
     if (strcmp($_REQUEST['accion'],'recibirFormNuevaIncidencia') == 0) {
-        $id=$_REQUEST['id'];
+        
         $latitud=$_REQUEST['latitud'];
         $longitud=$_REQUEST['longitud'];
         $ciudad=$_REQUEST['ciudad'];
@@ -85,7 +85,7 @@ if(isset($_REQUEST)){
         
     
 
-        $incidencia = new incidencia(id:$id,latitud:$latitud,longitud:$longitud,ciudad:$ciudad,direccion:$direccion,descripcion:$descripcion,solucion:$solucion,idCliente:$idCliente,estado:$estado);
+        $incidencia = new incidencia(latitud:$latitud,longitud:$longitud,ciudad:$ciudad,direccion:$direccion,descripcion:$descripcion,solucion:$solucion,idCliente:$idCliente,estado:$estado);
 
         controladorIncidencias::insertarNuevaIncidencia($incidencia);
        
