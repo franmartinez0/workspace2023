@@ -41,8 +41,8 @@
                 echo " <td>".$regalo->getYear()."</td>";
                 echo "<td>";
                 echo "<a href='index.php?accion=eliminarRegalo&id=".$regalo->getId()."'><button class='btn btn-danger'>X</button>";
-                echo "<a href='index.php?accion=modificarResultadoForm&id=".$regalo->getId()."'><button class='btn btn-warning ms-1'>@</button>";
-                echo "<a href='index.php?accion=verIntentos&id=".$regalo->getId()."'><button class='btn btn-success ms-1'>Intentos</button>";
+                echo "<a href='index.php?accion=modificarRegalo&id=".$regalo->getId()."'><button class='btn btn-warning ms-1'>@</button>";
+                echo "<a href='index.php?accion=visualizarLinks&id=".$regalo->getId()."'><button class='btn btn-success ms-1'>Intentos</button>";
                 echo "</td>";
                 echo "</tr>";
             }

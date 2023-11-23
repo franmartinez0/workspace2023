@@ -3,7 +3,9 @@
 namespace regalos\controladores;
 use regalos\modelos\modeloRegalos;
 use regalos\vistas\vistaFormNuevoRegalo;
+use regalos\vistas\vistaFormModificarRegalo;
 use regalos\vistas\vistaRegalos;
+use RegalosNavidad\modelos\modeloRegalos as ModelosModeloRegalos;
 
 class controladorRegalos{
 
@@ -35,6 +37,32 @@ class controladorRegalos{
         vistaRegalos::render($regalos);
 
     }
+
+    public static function visualizarRegalo($id){
+
+
+    }
+    public static function verModificarRegalo($id){
+
+        $regalo=modeloRegalos::infoRegalo($id);
+
+        vistaFormModificarRegalo::render($regalo);
+    }
+
+    public static function modificarRegalo($regalo) {
+        modeloRegalos::modificarRegalo($regalo);
+
+
+        
+        $usu = unserialize($_SESSION['usuario']);
+        // RENDERIZAMOS LA VISTA DE RESULTADOS
+        $regalos = modeloRegalos::mostrarRegalos($usu -> getId());
+       
+        vistaRegalos::render($regalos);
+        die();
+    }
+
+
 }
 
 

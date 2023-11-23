@@ -77,10 +77,44 @@ if(isset($_REQUEST)){
 
     
 
-
+    //METODO REQUEST PARA VISUALIZAR REGALO
+    if (strcmp($_REQUEST['accion'], 'visualizarRegalo') == 0) {
+        $id = $_REQUEST['id'];
+        ControladorRegalos::visualizarRegalo($id);
+    }
     
 
 
+
+     //METODO REQUEST PARA MODIFICAR REGALO
+     if (strcmp($_REQUEST['accion'], 'modificarRegalo') == 0) {
+        $id = $_REQUEST['id'];
+        ControladorRegalos::verModificarRegalo($id);
+    }
+
+
+    //recogemos el formulario de actualizacion
+    if (strcmp($_REQUEST['accion'], 'recibirFormModificarRegalo') == 0) {
+        $nombre = $_REQUEST['nombre'];
+        $idUsuario=$_REQUEST['idUsuario'];
+        $precio=$_REQUEST['precio'];
+        $estado=$_REQUEST['estado'];
+        $year=$_REQUEST['year'];
+        $id=$_REQUEST['id'];
+        
+        $regalo = new regalo(nombre:$nombre,idUsuario:$idUsuario,precio:$precio,estado:$estado,year:$year,id:$id);
+
+        controladorRegalos::modificarRegalo($regalo);
+        
+    }
+
+
+
+
+
+
+
+    
 }else {
     //Mostrar inicio
     controladorUsuarios::mostrarInicio();
