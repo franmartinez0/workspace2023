@@ -6,7 +6,9 @@ session_start();
 
 use regalos\controladores\controladorUsuarios;
 use regalos\controladores\controladorRegalos;
+use regalos\controladores\controladorLinks;
 use regalos\modelos\regalo;
+use regalos\modelos\link;
 
 //Autocargar las clases --------------------------
 spl_autoload_register(function ($class) {
@@ -110,7 +112,40 @@ if(isset($_REQUEST)){
 
 
 
+    
+    //METODO REQUEST PARA VISUALIZAR LINKS
+    if (strcmp($_REQUEST['accion'], 'visualizarLinks') == 0) {
+        $id = $_REQUEST['id'];
+        controladorLinks::visualizarLinks($id);
+    }
 
+    
+    //MOSTRAR FORM NUEVO LINK
+    if (strcmp($_REQUEST['accion'],'mostrarFormNuevoLink') == 0) {
+        $id = $_REQUEST['id'];
+        controladorLinks::NuevoLink($id);
+    }
+
+    
+
+    //RECIBIR FORM NUEVO LINK
+    if (strcmp($_REQUEST['accion'],'recibirFormNuevoLink') == 0) {
+        $url = $_REQUEST['url'];
+        $nombreUrl = $_REQUEST['nombreUrl'];
+        $idRegalo=$_REQUEST['idRegalo'];
+        
+        $link = new link(url:$url,nombreUrl:$nombreUrl,idRegalo:$idRegalo);
+
+        controladorLinks::insertarNuevolink($link);
+        controladorLinks::visualizarLinks($idRegalo);
+    }
+
+    if (strcmp($_REQUEST['accion'],'eliminarLink') == 0) {
+        $id = $_REQUEST['id'];
+        $idRegalo = $_REQUEST['idRegalo'];
+        controladorLinks::eliminarLink($id,$idRegalo);
+
+    }
 
 
 

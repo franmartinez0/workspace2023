@@ -5,7 +5,6 @@ use regalos\modelos\modeloRegalos;
 use regalos\vistas\vistaFormNuevoRegalo;
 use regalos\vistas\vistaFormModificarRegalo;
 use regalos\vistas\vistaRegalos;
-use RegalosNavidad\modelos\modeloRegalos as ModelosModeloRegalos;
 
 class controladorRegalos{
 
