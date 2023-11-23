@@ -19,11 +19,13 @@ class controladorLinks{
         vistaFormNuevoLink::render($id);
 
     }
-    public static function insertarNuevoLink($link){
+    public static function insertarNuevoLink($link,$idRegalo){
 
         modeloLinks::insertarLink($link);
+        
+        $links = modeloLinks::visualizarLinks($idRegalo);
 
-     
+        vistaLinks::render($links, $idRegalo);
     }
     public static function eliminarLink($id,$idRegalo){
 
