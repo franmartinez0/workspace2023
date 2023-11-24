@@ -137,7 +137,7 @@ if(isset($_REQUEST)){
         $link = new link(url:$url,nombreUrl:$nombreUrl,idRegalo:$idRegalo);
 
         controladorLinks::insertarNuevolink($link,$idRegalo);
-        //controladorLinks::visualizarLinks($idRegalo);
+    
     }
 
     if (strcmp($_REQUEST['accion'],'eliminarLink') == 0) {
@@ -153,8 +153,6 @@ if(isset($_REQUEST)){
 }else {
     //Mostrar inicio
     controladorUsuarios::mostrarInicio();
-    
-
 
 }
 }
