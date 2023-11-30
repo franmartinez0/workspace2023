@@ -18,9 +18,9 @@
 <?php
 
 //echo $resultado;
-$uri = "https://valorant-api.com/v1/agents?language=es-ES";       
+$uri = "https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=1000&api_key=";       
 $reqPrefs['http']['method'] = 'GET';
-$reqPrefs['http']['header'] = '';
+$reqPrefs['http']['header'] = 'nXutjGN05a7Q9V49spoDZVjf2RfTdAHGFmgTLZQP';
 $stream_context = stream_context_create($reqPrefs);
 $resultado = file_get_contents($uri, false, $stream_context);
 
