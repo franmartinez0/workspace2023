@@ -1,6 +1,6 @@
 <?php
 
-namespace Padel\Modelos;
+namespace regalos\modelos;
 use \PDO;
 use \PDOException;
 

@@ -6,6 +6,10 @@ use regalos\vistas\vistaInicio;
 use regalos\vistas\vistaRegalos;
 use regalos\modelos\modeloUsuarios;
 use regalos\modelos\modeloRegalos;
+
+
+
+
 //mostrarlogin
 class controladorUsuarios{
 
