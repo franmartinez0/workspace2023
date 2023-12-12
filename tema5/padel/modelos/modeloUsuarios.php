@@ -1,14 +1,15 @@
 <?php
 
-namespace Padel\Modelos;
+namespace regalos\modelos;
 
-
-use Padel\Modelos\ConexionBaseDeDatos;
-use Padel\Modelos\Jugador;
 use \PDO;
 
 
-class ModeloJugadores
+use regalos\modelos\ConexionBaseDeDatos;
+
+
+
+class modeloUsuarios
 {
 
     public static function checkLogin($email, $password)
@@ -20,7 +21,7 @@ class ModeloJugadores
         $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE email=? and password=?");
         $consulta->bindValue(1, $email);
         $consulta->bindValue(2, $password);
-        $consulta->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'padalea\modelos\jugador'); //Nombre de la clase
+        $consulta->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'regalos\modelos\usuario'); //Nombre de la clase
         $consulta->execute();
 
         $resultado = $consulta->fetch();

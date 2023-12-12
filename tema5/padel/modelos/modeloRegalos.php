@@ -6,6 +6,7 @@ use \PDO;
 
 use regalos\modelos\ConexionBaseDeDatos;
 
+
 class modeloRegalos
 {
     public static function mostrarRegalos($idUsuario)

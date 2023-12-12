@@ -2,13 +2,21 @@ const express = require("express");
 const app = express();
 
 
+
+//configurar req
+app.use(express.json());
+app.use()
+
 //cargar rutas
-const hello_routes = require("./routes/hello");
+
+const task_routes = require("./routes/tasks");
+
+
 
 
 //rutas base
-app.use("/api",hello_routes);
 
+app.use("/api",task_routes);
 
 
 module.exports=app;

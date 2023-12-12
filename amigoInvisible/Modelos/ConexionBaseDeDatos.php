@@ -1,6 +1,6 @@
 <?php
 
-namespace regalos\modelos;
+namespace amigoInvisible\Modelos;
 
 use \PDO;
 use \PDOException;
@@ -17,7 +17,7 @@ class ConexionBaseDeDatos
 
         try {
             if ($this->conexion == null) {
-                $this->conexion = new PDO("mysql:host=" . $host . ";dbname=" . "regalosNavidad", "root", "toor");
+                $this->conexion = new PDO("mysql:host=" . $host . ";dbname=" . "amigoInvisible", "root", "toor");
                 $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $this->conexion->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             }
